@@ -145,6 +145,11 @@ def sg_policy_func(args: ResourceValidationArgs, report_violation):
             and ingress["toPort"] == 22
             and "0.0.0.0/0" in ingress["cidrBlocks"]
         ):
+        if (
+            ingress["fromPort"] == 3389
+            and ingress["toPort"] == 3389
+            and "0.0.0.0/0" in ingress["cidrBlocks"]
+        ):
             report_violation(
                 "Ingress rule allowing traffic on port 22 from 0.0.0.0/0 is not allowed"
             )
