@@ -50,7 +50,7 @@ resource_naming_convention = ResourceValidationPolicy(
 ##########################################################################################
 ##########################################################################################
 
-# policy to check s3 naming
+# policy to check s3 naming convention
 
 
 def check_s3_bucket_name(resource, report_violation):
