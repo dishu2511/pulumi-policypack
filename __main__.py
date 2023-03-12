@@ -60,7 +60,9 @@ def check_s3_bucket_name(resource, report_violation):
             bucketName.startswith(f"{COMPANY_NAME}-{PROJECT_NAME}")
             and any(bucketName.endswith(env) for env in ENV_LIST)
         ):
-            report_violation("The S3 bucket name must start with 'my-company'.")
+            report_violation(
+                "The S3 bucket naming does not follow standard naming convention"
+            )
 
 
 check_s3_bucket_naming_convention = ResourceValidationPolicy(
